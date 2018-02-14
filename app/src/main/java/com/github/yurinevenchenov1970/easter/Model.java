@@ -2,6 +2,7 @@ package com.github.yurinevenchenov1970.easter;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
@@ -36,14 +37,22 @@ public class Model {
             e.printStackTrace();
         }
 
-        reformTags();
-        return mDocument.outerHtml();
+        return reformTags();
     }
 
-    private void reformTags() {
-        mDocument.head().getElementsByTag("link").remove();
-        mDocument.head().appendElement("link").attr("rel", "stylesheet")
-                .attr("type", "text/css")
-                .attr("href", "style.css");
+    private String reformTags() {
+        Elements title = mDocument.body().getElementsByClass("post_title");
+        Elements content = mDocument.body().getElementsByClass("post_content");
+        String whole = "<head><title>Easter Book</title> <link rel='stylesheet' type='text/css' href='style.css'></head> <body>"
+                + title.outerHtml()
+                + "<a name='home'></a>"
+                + content.outerHtml()
+                + addNavidationButton()
+                + "</body>";
+        return whole;
+    }
+
+    private String addNavidationButton(){
+        return "<a id='toContent' href='#home'>&#916;</a>";
     }
 }
