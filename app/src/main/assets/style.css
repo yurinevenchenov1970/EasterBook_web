@@ -16,7 +16,7 @@ a {
 }
 
 h1 a {
-display:block;
+    display:block;
     color:#660000;
     text-decoration:none;
     text-align: center;
@@ -25,6 +25,7 @@ display:block;
 }
 
 h3 a {
+    display:block;
     color:#990000;
     text-decoration:none;
     margin-left: 50;

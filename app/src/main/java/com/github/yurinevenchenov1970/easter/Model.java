@@ -63,6 +63,8 @@ public class Model {
 //        mDocument.body().getElementsByClass("post_info_1").remove();
 //        mDocument.body().getElementsByClass("post_info post_info_2").remove();
 
+        mDocument.body().select("table").attr("width", "100%");
+
         Elements title = mDocument.body().getElementsByClass("post_title");
         Elements content = mDocument.body().getElementsByClass("post_content");
         String wholeArticle = "<head><title>Easter Book</title> <link rel='stylesheet' type='text/css' href='style.css'></head> <body>"

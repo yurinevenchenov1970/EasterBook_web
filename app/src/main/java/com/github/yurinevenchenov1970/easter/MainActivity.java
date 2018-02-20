@@ -40,4 +40,5 @@ public class MainActivity extends Activity implements MainView {
     private void hideProgress() {
         mProgressBar.setVisibility(View.GONE);
     }
+
 }
