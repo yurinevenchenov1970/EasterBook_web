@@ -7,6 +7,10 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
+
+
 public class MainActivity extends Activity implements MainView {
 
     WebView mWebView;
@@ -16,6 +20,7 @@ public class MainActivity extends Activity implements MainView {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
         mProgressBar = (ProgressBar) findViewById(R.id.progress);
         showProgress();
@@ -40,5 +45,4 @@ public class MainActivity extends Activity implements MainView {
     private void hideProgress() {
         mProgressBar.setVisibility(View.GONE);
     }
-
 }
