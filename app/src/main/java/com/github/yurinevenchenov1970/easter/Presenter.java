@@ -17,7 +17,10 @@ public class Presenter implements MainPresenter {
 
     @Override
     public void getHtmlContent() {
-        String s = mModel.getHtmlData(mMainView);
+        mModel.getHtmlData(mMainView);
+           }
+
+    void showData(String s){
         mMainView.showContent(s);
     }
 }

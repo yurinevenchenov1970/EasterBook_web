@@ -22,6 +22,7 @@ public class MainActivity extends Activity implements MainView {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
+
         mProgressBar = (ProgressBar) findViewById(R.id.progress);
         showProgress();
 
