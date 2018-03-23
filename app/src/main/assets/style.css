@@ -41,8 +41,8 @@ h3 a {
     bottom:0;
     background-color:#990000;
     background: linear-gradient(to top, #660000, #aa0000);
-    margin: 5;
-    padding:10 20;
+    margin: 2px;
+    padding:5px 15px;
     color:white;
     text-decoration:none;
     font-size:1.5em;

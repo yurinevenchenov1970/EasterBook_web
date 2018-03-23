@@ -10,11 +10,9 @@ import android.widget.ProgressBar;
 import com.crashlytics.android.Crashlytics;
 import io.fabric.sdk.android.Fabric;
 
-
-public class MainActivity extends Activity implements MainView {
+public class MainActivity extends Activity {
 
     WebView mWebView;
-    Presenter mPresenter;
     ProgressBar mProgressBar;
 
     @Override
@@ -25,17 +23,14 @@ public class MainActivity extends Activity implements MainView {
 
         mProgressBar = (ProgressBar) findViewById(R.id.progress);
         showProgress();
-
-        mPresenter = new Presenter(this);
-        mPresenter.getHtmlContent();
+        showContent();
     }
 
-    @Override
-    public void showContent(String content) {
+    public void showContent() {
         mWebView = (WebView) findViewById(R.id.web_view);
         mWebView.setWebViewClient(new WebViewClient());
 
-        mWebView.loadDataWithBaseURL("file:///android_asset/.", content, "text/html", "UTF-8", null);
+        mWebView.loadUrl("file:///android_asset/book.html");
         hideProgress();
     }
 
